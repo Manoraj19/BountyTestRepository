@@ -1,12 +1,7 @@
-test10571
-'use client-821pm'
-test PR table
-fixed in 5 mins
-
-
+'use client'
 
 import { useState } from 'react'
-import { PreferencesLayoutt } from '../../components/preferences-layout'
+import { PreferencesLayout } from '../../components/preferences-layout'
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { useRouter } from 'next/navigation'
@@ -23,12 +18,11 @@ export default function TechnologyPreferences() {
 
   const handleTechChange = (tech: string) => {
     setSelectedTech(prev => 
-      prev.includes(techo) ? prev.filter(t => t !== tech) : [...prev, tech]
+      prev.includes(tech) ? prev.filter(t => t !== tech) : [...prev, tech]
     )
   }
-console.log('issue march');
+
   const handleNext = () => {
-    // Here you would typically save the preferences
     console.log("Selected technologies:", selectedTech)
     router.push('/preferences/language')
   }
@@ -63,4 +57,3 @@ console.log('issue march');
     </PreferencesLayout>
   )
 }
-
